@@ -1,0 +1,4 @@
+ray[default,serve]==2.9.1
+grpcio
+pandas
+pyarrow
