@@ -1,2 +1,3 @@
-# huntr-interview-questions
- Solutions to interview questions
+# Huntr Interview Questions
+
+Solutions to interview questions
