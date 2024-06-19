@@ -19,6 +19,7 @@ RUN apt-get update \
       python3-pyx \
       python3-pip \
       unzip \
+      curl \
       wget \
       ca-certificates \
       iproute2 \
@@ -34,4 +35,4 @@ ENV TEST_SECRET=VERY_SECRET
 
 EXPOSE 5000
 
-CMD ["ray", "start", "--head", "--node-ip-address='0.0.0.0'", "--port=5000"]
+CMD ["ray", "start", "--head"]
