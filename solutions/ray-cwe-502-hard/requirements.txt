@@ -1,4 +1,5 @@
-ray[default,serve]==2.9.1
+ray[data,default,serve]==2.9.1
 grpcio
-pandas
+pandas<2.2.0
 pyarrow
+tqdm
