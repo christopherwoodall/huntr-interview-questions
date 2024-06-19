@@ -7,7 +7,7 @@ Resources:
 
 ## Overview
 ### Description
-This is an RCE exploit for Ray 2.9.1. The exploit is a deserialization attack that allows an attacker to execute arbitrary code on the target machine. The attack is performed by sending a malicious serialized object to the Ray service. The service deserializes the object and executes the code contained within it.
+This is an RCE for Ray 2.9.1. The exploit is a deserialization attack that allows an attacker to execute arbitrary code on the target machine. The attack is performed by sending a malicious serialized object to the Ray service.
 
 ### Rating
 The vulnerability has been rated as `Critical` with a CVSS score of `9.8`. This is because the vulnerability is remotely exploitable and allows an attacker to execute arbitrary code on the target machine.
