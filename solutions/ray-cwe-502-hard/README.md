@@ -14,10 +14,10 @@ Resources:
 ### Terminal 1 - Start the Service
 ```bash
 docker build -t ray-cwe-demo:2.9.1 --no-cache .
-docker run -it --publish-all --shm-size=4.43gb ray-cwe-demo:2.9.1
+docker run -it --network=host --shm-size=4.43gb ray-cwe-demo:2.9.1
 ```
 
-### Terminal 2 - Reverse Shell
+### Terminal 2 - `netcat` Listener
 ```bash
 nc -lvp 4321
 ```
