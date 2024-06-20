@@ -1,5 +1,7 @@
 # Ray 2.9.1 Deserialization Demo (Reverse Shell) - CWE-502
+
 Report: https://huntr.com/bounties/ce6cb61c-fce1-406f-80e2-f3b7cdddbd6f
+
 Resources:
    - https://docs.ray.io/en/latest/ray-overview/installation.html
    - https://github.com/ray-project/ray
