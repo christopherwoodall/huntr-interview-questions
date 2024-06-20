@@ -20,7 +20,7 @@ Pull the image from dockerhub using `docker pull rayproject/ray:2.9.1` or build 
 
 ```bash
 docker build -t ray-cwe-demo:2.9.1 --no-cache .
-docker run -it -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 -p 4321:4321 --shm-size=4.43gb ray-cwe-demo:2.9.1
+docker run -it -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 -p 4321:4321 --add-host host.docker.internal:host-gateway --shm-size=4.43gb ray-cwe-demo:2.9.1
 ```
 
 ### Terminal 2 - `netcat` Listener
@@ -30,7 +30,7 @@ nc -lvp 4321
 
 ### Terminal 3 - Attack
 ```bash
-python -m venv .venv-3.8
+python3.8 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python exploit.py
