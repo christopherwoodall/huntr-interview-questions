@@ -34,6 +34,9 @@ nc -lvp 4321
 ```
 
 ### Terminal 3 - Attack
+
+The vulnerable method is `dumps_from_client` located in `ray/util/client/client_pickler.py`. By overwriting the `dumps_from_client` method, we can send a malicious payload to be executed on the server.
+
 ```bash
 python3.8 -m venv .venv
 source .venv/bin/activate
@@ -69,6 +72,9 @@ nc -lvp 4321
 ```
 
 ### Terminal 3 - Attack
+
+The vulnerable method is `dumps_from_server` located in `ray/util/client/server/server_pickler.py`. By overwriting the `dumps_from_server` method, we can send a malicious payload to be executed on the client.
+
 ```bash
 python3.8 -m venv .venv
 source .venv/bin/activate
