@@ -1,4 +1,4 @@
-# Ray 2.9.1 Deserialization Demo - CWE-502
+# Ray 2.9.1 Deserialization Demo (Reverse Shell) - CWE-502
 Report: https://huntr.com/bounties/ce6cb61c-fce1-406f-80e2-f3b7cdddbd6f
 Resources:
    - https://docs.ray.io/en/latest/ray-overview/installation.html
@@ -15,14 +15,12 @@ The vulnerability has been rated as `Critical` with a CVSS score of `9.8`. This 
 
 ## Commands
 ### Terminal 1 - Start the Service
-```bash
-docker pull rayproject/ray:2.9.1
-docker run -it -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 --shm-size=4.43gb rayproject/ray:2.9.1
-```
 
-From the container run:
+Pull the image from dockerhub using `docker pull rayproject/ray:2.9.1` or build the image using the provided `Dockerfile`. Note, if the image is pulled from dockerhub, then the client python version must be `>=3.8` and the `ncat` command must be installed manually.
+
 ```bash
-ray start --head
+docker build -t ray-cwe-demo:2.9.1 --no-cache .
+docker run -it -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 -p 4321:4321 --shm-size=4.43gb ray-cwe-demo:2.9.1
 ```
 
 ### Terminal 2 - `netcat` Listener
