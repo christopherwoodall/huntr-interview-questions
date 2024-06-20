@@ -9,9 +9,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && date
 
-COPY requirements.txt /poc/requirements.txt
-WORKDIR /poc
-
 RUN apt-get update \
     && apt-get install --assume-yes \
       curl \
